@@ -17,33 +17,29 @@ public class hybrid extends Vehicle {
         this.battery = battery;
     }
 
-    public float getFuelEffciency(){
-        Scanner scrn = new Scanner(System.in);
-        int newMiles;
-        newMiles = scrn.nextInt();
-        return newMiles;
-    }
+
     public float getTank(){
         return tank;
     }
+    public float getBattery(){
+        return battery;
+    }
+    public String gettype(){
+        return type;
+    }
 
 
-    public void hybrid(String a, String b, int c, String d, int e, float f, String t, int watts){
-        super.base(a,b,c,d,e);
+    public void hybrid(String make, String model, int year, String Lplate, int miles, float battery, String fueltype, int watts){
+        super.base(make,model,year,Lplate,miles);
+        initial(watts,fueltype,battery);
 
 
     }
     public double getFuelEffciency(int m){
-        return (double)m/getTank();
-
+        double mpg  = ((double)(m))/ getTank();
+        double mpge = ((double)(m) *2)/getBattery();
+        return ((mpg +mpge)/2);
     }
-    public double getFuelEffciencya(int m){
-        return (double)(m/getTank());
 
-    }
-    public double getFuelEffciencyb(int m){
-        return (double)m/getTank();
-
-    }
 
 }

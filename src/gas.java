@@ -13,9 +13,9 @@ public class gas extends Vehicle{
         this.type = type;
 
     }
-    public void gas(String a, String b, int c, String d, int e, float f, String t){
-        super.base(a,b,c,d,e);
-        initial(f,t);
+    public void gas(String make, String model, int year, String Lplate, int miles, float tankCap,String gastype ){
+        super.base(make,model,year,Lplate,miles);
+        initial(tankCap,gastype);
 
     }
     public float getTank(){
@@ -23,7 +23,6 @@ public class gas extends Vehicle{
     }
     public double getFuelEffciency(int m){
         return (double)m/getTank();
-
     }
 
 
